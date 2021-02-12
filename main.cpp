@@ -4,7 +4,7 @@
 
 struct Studentas{
     std::string vardas,pavarde;
-    double *paz, egz, gal;
+    double paz[500], egz, gal;
 };
 
 int main(){
@@ -12,15 +12,29 @@ int main(){
     int n;
     std::cin >> n;
     grupe = new Studentas [n];
-    std::cout << "Iveskite studento varda ir pavarde" <<std::endl;
+    bool t = true;
+    int kiek;
     for(int i= 0; i<n; i++)
     {
+        std::cout << "Iveskite studento varda ir pavarde" <<std::endl;
         std::cin >> grupe[i].vardas;
         std::cin >> grupe[i].pavarde;
         std::cout << "Iveskite jo namu darbu pazymius ";
-        for(int y=0; y<500; y++){
-           std::cin >> grupe[i].paz[y];
+        while(t){
+            std::cin >> grupe[i].paz[i];
+            grupe[i].gal = grupe[i].paz[i]++ / kiek;
+            kiek++;
+            if(grupe[i].paz[i]==0){
+                break;
+            }
         }
+        std::cout << "Iveskite jo egzamino pazymi " << std::endl;
+        std::cin >> grupe[i].egz;
+
+        grupe[i].gal = grupe[i].gal *0.4 +0.6*grupe[i].egz;
+        
+        std::cout << grupe[i].gal;
     }
+    
     
 }

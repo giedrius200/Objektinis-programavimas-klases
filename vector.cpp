@@ -12,6 +12,8 @@ int main(){
     int u = 0;
     double num;
     char ivesti;
+    char jau;
+
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<> distr(1, 10);
@@ -21,22 +23,34 @@ int main(){
         cout << "Iveskite studento varda ir pavarde" <<endl;
         cin >> grupe[i].vardas;
         cin >> grupe[i].pavarde;
-        cout << "Iveskite kiek pazymiu studentas tures" << endl;
-        cin >> kiek;
         cout << "Ar namu darbai bus random (t,n)?" << endl;
         cin >> ivesti;
         cout << "Iveskite jo namu darbu pazymius"<< endl;
         grupe[i].gal = 0;
-        for(int y = 0; y < kiek; y++){
+        while(t){
             if (ivesti == 'n') {
                 cin >> num;
+                grupe[i].paz.push_back(num);
+                cout << "Ar uzteks (t,n)?" << endl;
+                cin >> jau;
+                grupe[i].gal = grupe[i].gal + grupe[i].paz[kiek];
+                kiek++;
+                if (jau == 't') {
+                    break;
+                }
             }
             else {
                 num = distr(gen);
+                grupe[i].paz.push_back(num);
                 cout << num << endl;
+                cout << "Ar uzteks (t,n)?" << endl;
+                cin >> jau;
+                grupe[i].gal = grupe[i].gal + grupe[i].paz[kiek];
+                kiek++;
+                if (jau == 't') {
+                    break;
+                }
             }
-        grupe[i].paz.push_back(num);
-        grupe[i].gal = grupe[i].gal + grupe[i].paz[y];
 
         }
         cout << "Iveskite jo egzamino pazymi " << std::endl;

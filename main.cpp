@@ -10,6 +10,7 @@ int main(){
     int vieta = 0;
     int u = 0;
     char ivesti;
+    char jau;
 
     std::random_device rd;
     std::mt19937 gen(rd());
@@ -19,21 +20,32 @@ int main(){
         cout << "Iveskite studento varda ir pavarde" <<endl;
         cin >> grupe[i].vardas;
         cin >> grupe[i].pavarde;
-        cout << "Iveskite kiek pazymiu studentas tures" << endl;
-        cin >> kiek;
         cout << "Ar namu darbai bus random (t,n)?" << endl;
         cin >> ivesti;
         cout << "Iveskite jo namu darbu pazymius " << endl;
         grupe[i].gal = 0;
-        for(int y = 0; y <kiek; y++){
+        while (t){
             if (ivesti == 'n') {
-                cin >> grupe[i].paz1[y];
+                cin >> grupe[i].paz1[kiek];
+                cout << "Ar uzteks (t,n)?" << endl;
+                cin >> jau;
+                grupe[i].gal = grupe[i].paz1[kiek] + grupe[i].gal;
+                kiek++;
+                if (jau == 't') {
+                    break;
+                }
             }
             else {
-                grupe[i].paz1[y] = distr(gen);
-                cout << grupe[i].paz1[y] << endl;
+                grupe[i].paz1[kiek] = distr(gen);
+                cout << grupe[i].paz1[kiek] << endl;
+                cout << "Ar uzteks (t,n)?" << endl;
+                cin >> jau;
+                grupe[i].gal = grupe[i].gal + grupe[i].paz1[kiek];
+                kiek++;
+                if (jau == 't') {
+                    break;
+                }
             }
-            grupe[i].gal = grupe[i].paz1[y]+grupe[i].gal;
           
         }
         cout << "Iveskite jo egzamino pazymi " << endl;

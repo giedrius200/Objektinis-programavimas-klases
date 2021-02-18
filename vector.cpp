@@ -11,24 +11,40 @@ int main(){
     int vieta = 0;
     int u = 0;
     double num;
+    char ivesti;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(1, 10);
     for(int i= 0; i<n; i++)
     {
-        std::cout << "Iveskite studento varda ir pavarde" <<std::endl;
-        std::cin >> grupe[i].vardas;
-        std::cin >> grupe[i].pavarde;
-        std::cout << "Iveskite jo namu darbu pazymius(jei daugiau nera tai iveskite'0') "<< std::endl;
+
+        cout << "Iveskite studento varda ir pavarde" <<endl;
+        cin >> grupe[i].vardas;
+        cin >> grupe[i].pavarde;
+        cout << "Iveskite kiek pazymiu studentas tures" << endl;
+        cin >> kiek;
+        cout << "Ar namu darbai bus random (t,n)?" << endl;
+        cin >> ivesti;
+        cout << "Iveskite jo namu darbu pazymius"<< endl;
         grupe[i].gal = 0;
-        while ((std::cin >> num) && num != cinTerminator) {
+        for(int y = 0; y < kiek; y++){
+            if (ivesti == 'n') {
+                cin >> num;
+            }
+            else {
+                num = distr(gen);
+                cout << num << endl;
+            }
         grupe[i].paz.push_back(num);
-        grupe[i].gal = grupe[i].gal + grupe[i].paz[kiek];
-        kiek ++;
+        grupe[i].gal = grupe[i].gal + grupe[i].paz[y];
+
         }
-        std::cout << "Iveskite jo egzamino pazymi " << std::endl;
-        std::cin >> grupe[i].egz;
+        cout << "Iveskite jo egzamino pazymi " << std::endl;
+        cin >> grupe[i].egz;
 
         grupe[i].gal = grupe[i].gal/kiek*0.4 +0.6*grupe[i].egz;
         
-        std::cout << grupe[i].gal << std::endl;
+        cout << grupe[i].gal << std::endl;
         grupe[i].mediana = mediana(grupe[i].paz);
     }
     isvedimas(grupe,n);

@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <vector>
 #include <algorithm>
+#include <random>
 
 using std::cin;
 using std::cout;

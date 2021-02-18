@@ -3,40 +3,52 @@
 int main(){
     Studentas *grupe;
     int n;
-    std::cin >> n;
+    cin >> n;
     grupe = new Studentas [n];
     bool t = true;
     int kiek = 0;
     int vieta = 0;
     int u = 0;
+    char ivesti;
+
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(1, 10);
     for(int i= 0; i<n; i++)
     {
-        std::cout << "Iveskite studento varda ir pavarde" <<std::endl;
-        std::cin >> grupe[i].vardas;
-        std::cin >> grupe[i].pavarde;
-        std::cout << "Iveskite jo namu darbu pazymius(jei daugiau nera tai iveskite'0') ";
+        cout << "Iveskite studento varda ir pavarde" <<endl;
+        cin >> grupe[i].vardas;
+        cin >> grupe[i].pavarde;
+        cout << "Iveskite kiek pazymiu studentas tures" << endl;
+        cin >> kiek;
+        cout << "Ar namu darbai bus random (t,n)?" << endl;
+        cin >> ivesti;
+        cout << "Iveskite jo namu darbu pazymius " << endl;
         grupe[i].gal = 0;
-        while(t){
-            std::cin >> grupe[i].paz1[kiek];
-            if(grupe[i].paz1[kiek]==0){
-                break;
+        for(int y = 0; y <kiek; y++){
+            if (ivesti == 'n') {
+                cin >> grupe[i].paz1[y];
             }
-            grupe[i].gal = grupe[i].paz1[kiek]+grupe[i].gal;
-            
-            kiek++;
+            else {
+                grupe[i].paz1[y] = distr(gen);
+                cout << grupe[i].paz1[y] << endl;
+            }
+            grupe[i].gal = grupe[i].paz1[y]+grupe[i].gal;
+          
         }
-        std::cout << "Iveskite jo egzamino pazymi " << std::endl;
-        std::cin >> grupe[i].egz;
+        cout << "Iveskite jo egzamino pazymi " << endl;
+        cin >> grupe[i].egz;
 
         grupe[i].gal = grupe[i].gal/kiek*0.4 +0.6*grupe[i].egz;
         
-        std::cout << grupe[i].gal << std::endl;
-        u = kiek;
-        if (u+1 % 2 != 0){
-        grupe[i].mediana = grupe[i].paz1[u / 2]; 
+        cout << grupe[i].gal << endl;
+    }
+    for (int i = 0; i < n; i++) {
+        if (kiek % 2 != 0) {
+            grupe[i].mediana = grupe[i].paz1[(kiek) / 2];
         }
-        else{
-        grupe[i].mediana =(grupe[i].paz1[(u - 1) / 2] + grupe[i].paz1[u / 2]) / 2.0;
+        else {
+            grupe[i].mediana = (grupe[i].paz1[(kiek) / 2] + grupe[i].paz1[(kiek + 1) / 2]) / 2;
         }
     }
     isvedimas(grupe,n);

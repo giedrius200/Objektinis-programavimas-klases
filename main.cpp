@@ -60,7 +60,7 @@ int main(){
             grupe[i].mediana = grupe[i].paz1[(kiek) / 2];
         }
         else {
-            grupe[i].mediana = (grupe[i].paz1[(kiek) / 2] + grupe[i].paz1[(kiek + 1) / 2]) / 2;
+            grupe[i].mediana = (grupe[i].paz1[kiek / 2] + grupe[i].paz1[(kiek / 2) - 1]) / 2;
         }
     }
     isvedimas(grupe,n);

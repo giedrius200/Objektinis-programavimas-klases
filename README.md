@@ -1,18 +1,18 @@
 # Objektinis-programavavimas-2
 V0.1:
 Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą.
-![alt text](https://imgur.com/Uo1dWlX)
+![image](/assets/images/your-image.jpg)
 
 Suskaičiuoja galutinį balą ir pateikia į ekraną
-![alt text](https://ibb.co/ZKjdsNh)
+![image](/assets/images/your-image2.jpg)
 
 
 C  masyvą.
 std::vector  tipo konteinerį.
 
 
-![alt text](https://ibb.co/X26RPrF)
+![image](/assets/images/your-image3.jpg)
 
 Mokinio gautieji balai už namų darbus bei egzaminą generuojami atsitiktinai
-![alt text](https://ibb.co/FJFD7VC)
-![alt text](https://ibb.co/h8VbmnQ)
+![image](/assets/images/your-image4.jpg)
+![image](/assets/images/your-image5.jpg)

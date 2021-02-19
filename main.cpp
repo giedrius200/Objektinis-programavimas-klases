@@ -3,12 +3,10 @@
 int main(){
     Studentas *grupe;
     int n;
+    cout << "Iveskite studentu skaiciu " << endl;
     cin >> n;
     grupe = new Studentas [n];
-    bool t = true;
     int kiek = 0;
-    int vieta = 0;
-    int u = 0;
     char ivesti;
     char jau;
 
@@ -24,7 +22,7 @@ int main(){
         cin >> ivesti;
         cout << "Iveskite jo namu darbu pazymius " << endl;
         grupe[i].gal = 0;
-        while (t){
+        while (true){
             if (ivesti == 'n') {
                 cin >> grupe[i].paz1[kiek];
                 cout << "Ar uzteks (t,n)?" << endl;

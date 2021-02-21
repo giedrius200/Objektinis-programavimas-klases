@@ -22,37 +22,40 @@ double mediana(vector<double> scores)
 }
 void isvedimas(Studentas *grupe, int n)
 {
+    std::ofstream failas;
+    failas.open("isvesti.txt");
+
     char isvesti;
-    std::cout << "Ar isvesti mediana?(T,N)" << std::endl;
+    cout << "Ar isvesti mediana?(T,N)" << std::endl;
     std::cin >> isvesti;
-    std::cout << std::left << std::setw(20) << std::setfill(' ') << "Vardas" << std::left << std::setw(20) << std::setfill(' ') << "Pavarde" << std::left << std::setw(20) << std::setfill(' ') << "Vidurkis" << std::left << std::setw(20);
+    failas << std::left << std::setw(20) << std::setfill(' ') << "Vardas" << std::left << std::setw(20) << std::setfill(' ') << "Pavarde" << std::left << std::setw(20) << std::setfill(' ') << "Vidurkis" << std::left << std::setw(20);
     if (isvesti == 't') {
-        std::cout << std::setfill(' ') << "Mediana" << std::endl;
+        failas << std::setfill(' ') << "Mediana" << std::endl;
     }
     else {
-        std::cout << std::endl;
+        failas << std::endl;
     }
     for (int i = 0; i < n; i++) {
         if (isvesti == 't') {
-            std::cout << "----------------------------------------------------------------------------\n";
+            failas << "----------------------------------------------------------------------------\n";
         }
         else {
-            std::cout << "-------------------------------------------------\n";
+            failas << "-------------------------------------------------\n";
         }
-        std::cout << std::left << std::setw(20) << std::setfill(' ') << grupe[i].vardas;
-        std::cout << std::left << std::setw(20) << std::setfill(' ') << grupe[i].pavarde;
-        std::cout << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].gal;
+        failas << std::left << std::setw(20) << std::setfill(' ') << grupe[i].vardas;
+        failas << std::left << std::setw(20) << std::setfill(' ') << grupe[i].pavarde;
+        failas << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].gal;
         if (isvesti == 't') {
-            std::cout << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].mediana << std::endl;
+            failas << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].mediana << std::endl;
         }
         else {
-            std::cout << std::endl;
+            failas << std::endl;
         }
         if (isvesti == 't') {
-            std::cout << "----------------------------------------------------------------------------\n";
+            failas << "----------------------------------------------------------------------------\n";
         }
         else {
-            std::cout << "-------------------------------------------------\n";
+            failas << "-------------------------------------------------\n";
         }
     }
 }

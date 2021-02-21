@@ -59,7 +59,7 @@ int main() {
             //cout << grupe[b].vardas << endl;
             grupe[b].mediana = mediana(grupe[b].paz);
         }
-        isvedimas(grupe, n);
+        isvedimas(grupe, n,failas1);
     }
     else {
         cout << "Iveskite studentu skaiciu " << endl;
@@ -117,6 +117,6 @@ int main() {
             cout << grupe[i].gal << endl;
             grupe[i].mediana = mediana(grupe[i].paz);
         }
-        isvedimas(grupe, n);
+        isvedimas(grupe, n,failas1);
     }
 }

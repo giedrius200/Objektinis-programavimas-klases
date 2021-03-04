@@ -17,49 +17,61 @@ int main() {
         int ii = 0;
         //string vardas, pavarde;
         double paz1[15];
-        failas.open("studentai.txt");
-        n = std::count(std::istreambuf_iterator<char>(failas),
-            std::istreambuf_iterator<char>(), '\n');
-        failas.close();
-        failas.open("studentai.txt");
-        cout << n << endl;
-        grupe = new Studentas[n];
-        string dummyLine;
-        getline(failas, dummyLine);
-        if (failas.fail()) // checks to see if file opended
-        {
-            cout << "error" << endl;
-            return 1; // no point continuing if the file didn't open...
-        }
-        double c = 0;
-        double number = 0;
+        try {
+            failas.open("studentai.txt");
+            n = std::count(std::istreambuf_iterator<char>(failas),
+                std::istreambuf_iterator<char>(), '\n');
+            failas.close();
+            failas.open("studentai.txt");
+            cout << n << endl;
+            grupe = new Studentas[n];
+            string dummyLine;
+            getline(failas, dummyLine);
+            if (failas.fail()) // checks to see if file opended
+            {
+               
+                cout << "error" << endl;
+                return 1; // no point continuing if the file didn't open...
+            }
+            double c = 0;
+            double number = 0;
 
 
-        for (int ii = 0; ii < n; ii++) {
-            failas >> grupe[ii].vardas >>grupe[ii].pavarde;
-            grupe[ii].gal = 0;
-            getline(failas, line);
-            std::stringstream iss(line);
-            while (iss >> number) {
-                //cout << "Numeriai" << number << endl;
-                grupe[ii].paz.push_back(number);
+            for (int ii = 0; ii < n; ii++) {
+                failas >> grupe[ii].vardas >> grupe[ii].pavarde;
+                grupe[ii].gal = 0;
+                getline(failas, line);
+                std::stringstream iss(line);
+             
+                while (iss >> number) {
+                    //cout << "Numeriai" << number << endl;
+                        grupe[ii].paz.push_back(number);
+                        
+                    if (number == 0) {
+                        throw(number);
+                    }
+                }
+                grupe[ii].egz = grupe[ii].paz.back();
+                grupe[ii].paz.pop_back();
+                for (int d = 0; d < grupe[ii].paz.size(); d++) {
+                    grupe[ii].gal = grupe[ii].gal + grupe[ii].paz[d];
+                    //cout << grupe[ii].paz[d] <<endl;
+                }
+                c = grupe[ii].paz.size();
+                grupe[ii].gal = (grupe[ii].gal / c) * 0.4 + 0.6 * grupe[ii].egz;
+                //cout << grupe[ii].vardas <<" "<< grupe[ii].pavarde<<" Galutinis:" << grupe[ii].gal << endl;
             }
-            grupe[ii].egz = grupe[ii].paz.back();
-            grupe[ii].paz.pop_back();
-            for (int d = 0; d < grupe[ii].paz.size(); d++) {
-                grupe[ii].gal = grupe[ii].gal + grupe[ii].paz[d];
-                //cout << grupe[ii].paz[d] <<endl;
+            failas.close();
+            for (int b = 0; b < n; b++) {
+                //cout << grupe[b].vardas << endl;
+                grupe[b].mediana = mediana(grupe[b].paz);
             }
-            c = grupe[ii].paz.size();
-            grupe[ii].gal = (grupe[ii].gal / c) * 0.4 + 0.6 * grupe[ii].egz;
-            //cout << grupe[ii].vardas <<" "<< grupe[ii].pavarde<<" Galutinis:" << grupe[ii].gal << endl;
-            }
-        failas.close();
-        for (int b = 0; b < n; b++) {
-            //cout << grupe[b].vardas << endl;
-            grupe[b].mediana = mediana(grupe[b].paz);
+            isvedimas(grupe, n, failas1);
         }
-        isvedimas(grupe, n,failas1);
+        catch (double number) {
+            cout << "Nulis negali buti pazymys";
+        }
+        
     }
     else {
         cout << "Iveskite studentu skaiciu " << endl;

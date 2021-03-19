@@ -1,13 +1,13 @@
 # Objektinis-programavavimas-2
-V0.3:
-Header failas
+V0.4:
+Failu generavimas
 
 ![image](/assets1/your-image.jpg)
 
-Jo vidus
+Failu rusiavimas
 ![image](/assets1/your-image1.jpg)
 
-Catch
+Sukurimas dvieju failu
 
 ![image](/assets1/your-image2.jpg)
 

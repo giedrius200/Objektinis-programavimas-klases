@@ -6,6 +6,25 @@
 int main() {
     Studentas* grupe;
     long int n = 0;
+
+    int u = 0;
+    grupe = new Studentas[n];
+    int o = 1000;
+    //100000000
+    sukurimas();
+    while (o != 100000000) {
+        std::string filename = std::to_string(o) + ".txt";
+        auto t1 = high_resolution_clock::now();
+        rusiavimas(filename);
+        auto t2 = high_resolution_clock::now();
+
+        auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
+
+        cout << "Rusiavo: " << o << " Laikas "
+            << duration.count() << " milliseconds" << endl;
+        o = o * 10;
+    }
+    int numeris;
     cout << "Is failo? (t,n)" << endl;
     char failas1;
     cin >> failas1;
@@ -35,7 +54,6 @@ int main() {
             }
             double c = 0;
             double number = 0;
-
 
             for (int ii = 0; ii < n; ii++) {
                 failas >> grupe[ii].vardas >> grupe[ii].pavarde;

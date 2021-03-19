@@ -20,6 +20,70 @@ double mediana(vector<double> scores)
     }
   }
 }
+void sukurimas() {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distr(1, 10);
+    string filename;
+    int o = 1000;
+    int numeris;
+    while (o != 100000000) {
+        auto t1 = high_resolution_clock::now();
+        std::string filename = std::to_string(o) + ".txt";
+        std::ofstream out(filename);
+        out << std::left << std::setw(20) << std::setfill(' ') << "Vardas" << std::left << std::setw(20) << std::setfill(' ') << "Pavarde" << std::left << std::setw(20) << std::setfill(' ') << "Vidurkis" << endl;
+ 
+        for (int i = 0; i < o; i++) {
+            numeris = distr(gen);
+            out << "Vardas" << i << "    Pavarde" << i << "      " << numeris << endl;
+            
+        }
+        auto t2 = high_resolution_clock::now();
+        auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
+        cout << "Iraso: " << o << " Laikas "
+            << duration.count() << " milliseconds" << endl;
+        //out.close();
+        o = o * 10;
+    }
+}
+void rusiavimas(string filename) {
+    std::ifstream out(filename);
+    out.open(filename);
+    long int n = 0;
+
+    double number = 0;
+
+    n = std::count(std::istreambuf_iterator<char>(out),
+        std::istreambuf_iterator<char>(), '\n');
+    string vardas, pavarde;
+
+    out.close();
+    out.open(filename);
+    std::ofstream out1("vargsiukai" + filename);
+    std::ofstream out2("kieta" + filename);
+    out1 << std::left << std::setw(20) << std::setfill(' ') << "Vardas" << std::left << std::setw(20) << std::setfill(' ') << "Pavarde" << std::left << std::setw(20) << std::setfill(' ') << "Vidurkis" << endl;
+    out2 << std::left << std::setw(20) << std::setfill(' ') << "Vardas" << std::left << std::setw(20) << std::setfill(' ') << "Pavarde" << std::left << std::setw(20) << std::setfill(' ') << "Vidurkis" << endl;
+    
+    string line;
+
+    string dummyLine;
+    getline(out, dummyLine);
+    
+    for (long int u = 0; u < n; u++) {
+        out >> vardas >> pavarde >> number;
+        //cout << number << endl;
+        if (number < 5) {
+            out1 << vardas << "    " << pavarde << "      " << number << endl;
+        }
+        else {
+            out2 << vardas << "    " << pavarde << "      " << number << endl;
+        }
+    }
+
+    n = 0;
+
+    
+}
 void isvedimas(Studentas *grupe, int n, char failas1)
 {
     if (failas1 == 't') {

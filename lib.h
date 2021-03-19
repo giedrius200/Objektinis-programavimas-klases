@@ -10,7 +10,11 @@
 #include <random>
 #include <fstream>
 
+#include <chrono>
+
 #include <cstdlib>
+
+#include <thread>
 
 #include <sstream>
 
@@ -21,6 +25,14 @@ using std::vector;
 using std::string;
 
 using std::ifstream;
+using namespace std;
+using namespace std::chrono;
+using namespace std::chrono_literals;
+
+using std::chrono::high_resolution_clock;
+using std::chrono::duration_cast;
+using std::chrono::duration;
+using std::chrono::milliseconds;
 
 const int cinTerminator = 0;
 struct Studentas {
@@ -32,4 +44,7 @@ struct Studentas {
 
 double mediana(vector<double>);
 void isvedimas(Studentas *grupe, int,char);
+void sukurimas();
+void rusiavimas(string);
+
 #endif 

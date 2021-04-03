@@ -45,6 +45,7 @@ struct Studentas {
 double mediana(vector<double>);
 void isvedimas(Studentas *grupe, int,char);
 void sukurimas();
-void rusiavimas(string);
+void rusiavimas(string, int);
+void rusiavimasl(string, int);
 
 #endif 

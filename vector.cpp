@@ -12,10 +12,10 @@ int main() {
     int o = 1000;
     //100000000
     sukurimas();
-    while (o != 100000000) {
+    while (o != 1000000) {
         std::string filename = std::to_string(o) + ".txt";
         auto t1 = high_resolution_clock::now();
-        rusiavimas(filename);
+        rusiavimas(filename,o);
         auto t2 = high_resolution_clock::now();
 
         auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);

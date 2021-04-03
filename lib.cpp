@@ -27,7 +27,7 @@ void sukurimas() {
     string filename;
     int o = 1000;
     int numeris;
-    while (o != 100000000) {
+    while (o != 1000000) {
         auto t1 = high_resolution_clock::now();
         std::string filename = std::to_string(o) + ".txt";
         std::ofstream out(filename);
@@ -40,13 +40,13 @@ void sukurimas() {
         }
         auto t2 = high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
-        cout << "Iraso: " << o << " Laikas "
+        cout << "Iraso faila: " << o << " : "
             << duration.count() << " milliseconds" << endl;
         //out.close();
         o = o * 10;
     }
 }
-void rusiavimas(string filename) {
+void rusiavimas(string filename, int o) {
     std::ifstream out(filename);
     out.open(filename);
     long int n = 0;
@@ -57,6 +57,8 @@ void rusiavimas(string filename) {
         std::istreambuf_iterator<char>(), '\n');
     string vardas, pavarde;
 
+    //Studentas* grupe;
+
     out.close();
     out.open(filename);
     std::ofstream out1("vargsiukai" + filename);
@@ -66,20 +68,26 @@ void rusiavimas(string filename) {
     
     string line;
 
+    std::vector<Studentas> grupe(n);
     string dummyLine;
     getline(out, dummyLine);
-    
+    auto t1 = high_resolution_clock::now();
     for (long int u = 0; u < n; u++) {
-        out >> vardas >> pavarde >> number;
+        out >> grupe[u].vardas >> grupe[u].pavarde >> number;
+        grupe[u].paz.push_back(number);
         //cout << number << endl;
         if (number < 5) {
-            out1 << vardas << "    " << pavarde << "      " << number << endl;
+            out1 << grupe[u].vardas << "    " << grupe[u].pavarde << "      " << grupe[u].paz[0] << endl;
         }
         else {
-            out2 << vardas << "    " << pavarde << "      " << number << endl;
+            out2 << grupe[u].vardas << "    " << grupe[u].pavarde << "      " << grupe[u].paz[0] << endl;
         }
     }
-
+    grupe.push_back(Studentas());
+    auto t2 = high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
+    cout << "Skirste i grupes: " << o << " : "
+        << duration.count() << " milliseconds" << endl;
     n = 0;
 
     

@@ -20,3 +20,15 @@ Isvesties failas
 
 
 V0.3: Header failas
+
+
+
+
+
+
+
+V0.4: Failu generavimas
+
+image
+
+Failu rusiavimas ir sukurimas dvieju failu

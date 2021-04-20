@@ -32,3 +32,9 @@ V0.4: Failu generavimas
 image
 
 Failu rusiavimas ir sukurimas dvieju failu
+
+
+
+
+
+V0.5: Laikas per kiek su vector, list, deque ivygdyta

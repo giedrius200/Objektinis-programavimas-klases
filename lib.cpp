@@ -46,6 +46,11 @@ void sukurimas() {
         o = o * 10;
     }
 }
+bool maziau(double i) {
+    return (i < 5);
+}
+bool compare(double i) { 
+    return (i < 5); }
 
 void rusiavimas(string filename, int o) {
     std::ifstream out(filename);
@@ -58,7 +63,7 @@ void rusiavimas(string filename, int o) {
         std::istreambuf_iterator<char>(), '\n');
     string vardas, pavarde;
 
-    //Studentas* grupe;
+    //Studentas grupe;
 
     out.close();
     out.open(filename);
@@ -70,19 +75,32 @@ void rusiavimas(string filename, int o) {
     string line;
 
     std::vector<Studentas> grupe(n);
+    std::vector<Studentas> vargsiukai(n);
+
+    auto const predicate = [](double const value) { return value < 5; };
     string dummyLine;
     getline(out, dummyLine);
     auto t1 = high_resolution_clock::now();
+
     for (long int u = 0; u < n; u++) {
         out >> grupe[u].vardas >> grupe[u].pavarde >> number;
         grupe[u].paz.push_back(number);
         //cout << number << endl;
+        //std::remove_copy_if(grupe[u].paz.begin(), grupe[u].paz.end(), back_inserter(vargsiukai[u].paz), maziau);
+
+        //std::vector<double> vargsiukai[u].paz(grupe[u].paz.size());
         if (number < 5) {
-            out1 << grupe[u].vardas << "    " << grupe[u].pavarde << "      " << grupe[u].paz[0] << endl;
+            std::copy(grupe[u].vardas.begin(), grupe[u].vardas.end(), std::back_inserter(vargsiukai[u].vardas));
+            std::copy(grupe[u].pavarde.begin(), grupe[u].pavarde.end(), std::back_inserter(vargsiukai[u].pavarde));
+            std::copy(grupe[u].paz.begin(), grupe[u].paz.end(), std::back_inserter(vargsiukai[u].paz));
+            out1 << vargsiukai[u].vardas << "    " << vargsiukai[u].pavarde << "      " << vargsiukai[u].paz[0] << endl;
         }
         else {
-            out2 << grupe[u].vardas << "    " << grupe[u].pavarde << "      " << grupe[u].paz[0] << endl;
+            std::copy(grupe[u].vardas.begin(), grupe[u].vardas.end(), std::back_inserter(vargsiukai[u].vardas));
+            std::copy(grupe[u].pavarde.begin(), grupe[u].pavarde.end(), std::back_inserter(vargsiukai[u].pavarde));
+            out2 << vargsiukai[u].vardas << "    " << vargsiukai[u].pavarde << "      " << grupe[u].paz[0] << endl;
         }
+       
     }
     grupe.push_back(Studentas());
     auto t2 = high_resolution_clock::now();

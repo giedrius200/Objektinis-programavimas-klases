@@ -16,3 +16,7 @@ Mokinio gautieji balai už namų darbus bei egzaminą generuojami atsitiktina
 V0.2: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą iš failo image
 
 Isvesties failas 
+
+
+
+V0.3: Header failas

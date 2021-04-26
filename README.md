@@ -1,6 +1,7 @@
 # Objektinis-programavavimas-2
 V0.1:
 Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą.
+
 ![image](/assets/your-image.jpg)
 
 Suskaičiuoja galutinį balą ir pateikia į ekraną

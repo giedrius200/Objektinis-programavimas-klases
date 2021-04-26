@@ -1,44 +1,25 @@
 # Objektinis-programavavimas-2
 V1.0:
 
-V0.1: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą. image
+V0.1: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą. 
 
-Suskaičiuoja galutinį balą ir pateikia į ekraną image
+Suskaičiuoja galutinį balą ir pateikia į ekraną
 
-C masyvą. std::vector tipo konteinerį.
-
-image
-
-Mokinio gautieji balai už namų darbus bei egzaminą generuojami atsitiktinai image image
+Mokinio gautieji balai už namų darbus bei egzaminą generuojami atsitiktinai
 
 
 
 
-V0.2: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą iš failo image
-
-Isvesties failas 
-
-
+V0.2: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą iš failo 
 
 V0.3: Header failas
 
-
-
-
-
-
-
 V0.4: Failu generavimas
-
-image
-
 Failu rusiavimas ir sukurimas dvieju failu
 
 
-
-
-
 V0.5: Laikas per kiek su vector, list, deque ivygdyta
+
 
 v1.0
 1lib.cpp failas padarytas pagal:

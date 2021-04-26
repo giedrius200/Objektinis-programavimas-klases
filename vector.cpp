@@ -4,11 +4,11 @@
 
 
 int main() {
-    Studentas* grupe;
+    Studentas1* grupe;
     long int n = 0;
 
     int u = 0;
-    grupe = new Studentas[n];
+    grupe = new Studentas1[n];
     int o = 1000;
     double vector = 0;
     double list = 0;
@@ -73,7 +73,7 @@ int main() {
             failas.close();
             failas.open("studentai.txt");
             cout << n << endl;
-            grupe = new Studentas[n];
+            grupe = new Studentas1[n];
             string dummyLine;
             getline(failas, dummyLine);
             if (failas.fail()) // checks to see if file opended
@@ -128,7 +128,7 @@ int main() {
         double num;
         char ivesti;
         char jau;
-        grupe = new Studentas[n];
+        grupe = new Studentas1[n];
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<> distr(1, 10);

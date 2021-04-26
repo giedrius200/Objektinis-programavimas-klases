@@ -74,8 +74,8 @@ void rusiavimas(string filename, int o) {
     
     string line;
 
-    std::vector<Studentas> grupe(n);
-    std::vector<Studentas> vargsiukai(n);
+    std::vector<Studentas1> grupe(n);
+    std::vector<Studentas1> vargsiukai(n);
 
     auto const predicate = [](double const value) { return value < 5; };
     string dummyLine;
@@ -102,7 +102,7 @@ void rusiavimas(string filename, int o) {
         }
        
     }
-    grupe.push_back(Studentas());
+    grupe.push_back(Studentas1());
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
     cout << "Skirste i grupes: " << o << " : "
@@ -134,11 +134,11 @@ void rusiavimasl(string filename, int o) {
 
     string line;
 
-    std::list<Studentas> grupe(n);
+    std::list<Studentas1> grupe(n);
     string dummyLine;
     getline(out, dummyLine);
     auto t1 = high_resolution_clock::now();
-    std::list<Studentas>::iterator it;
+    std::list<Studentas1>::iterator it;
     for (it = grupe.begin(); it != grupe.end(); it++) {
         out >> (it)->vardas >> (it)->pavarde >> number;
         (it)->paz.push_back(number);
@@ -151,7 +151,7 @@ void rusiavimasl(string filename, int o) {
         }
     }
 
-    grupe.push_back(Studentas());
+    grupe.push_back(Studentas1());
 
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
@@ -184,11 +184,11 @@ void rusiavimasr(string filename, int o) {
 
     string line;
 
-    std::deque<Studentas> grupe(n);
+    std::deque<Studentas1> grupe(n);
     string dummyLine;
     getline(out, dummyLine);
     auto t1 = high_resolution_clock::now();
-    std::deque<Studentas>::iterator it;
+    std::deque<Studentas1>::iterator it;
     for (it = grupe.begin(); it != grupe.end(); it++) {
         out >> (it)->vardas >> (it)->pavarde >> number;
         (it)->paz.push_back(number);
@@ -201,7 +201,7 @@ void rusiavimasr(string filename, int o) {
         }
     }
 
-    grupe.push_back(Studentas());
+    grupe.push_back(Studentas1());
 
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
@@ -211,7 +211,7 @@ void rusiavimasr(string filename, int o) {
 
 
 }
-void isvedimas(Studentas *grupe, int n, char failas1)
+void isvedimas(Studentas1 *grupe, int n, char failas1)
 {
     if (failas1 == 't') {
 

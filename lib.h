@@ -45,9 +45,17 @@ struct Studentas {
     double paz1[500];
     double egz, gal, mediana;
 };
+class Studentas1 {
+    // realizacija
+public:
+    string vardas, pavarde;
+    vector<double> paz;
+    double paz1[500];
+    double egz, gal, mediana;
+};
 
 double mediana(vector<double>);
-void isvedimas(Studentas *grupe, int,char);
+void isvedimas(Studentas1 *grupe, int,char);
 void sukurimas();
 void rusiavimas(string, int);
 void rusiavimasl(string, int);

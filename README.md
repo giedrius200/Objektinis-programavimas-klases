@@ -5,6 +5,7 @@ Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą.
 ![image](/assets/your-image.jpg)
 
 Suskaičiuoja galutinį balą ir pateikia į ekraną
+
 ![image](/assets/your-image1.jpg)
 
 

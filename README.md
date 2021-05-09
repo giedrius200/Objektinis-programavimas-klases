@@ -5,7 +5,7 @@ Rule of three:
 
 1.copy constructor
 
-![image](/assets/image1.png)
+![image](/assets/image.png)
 
 2.copy assignment operator
 

@@ -9,7 +9,7 @@ Rule of three:
 
 2.copy assignment operator
 
-![image](/assets/image6.png)
+![image](/assets/image8.png)
 
 3.destructor
 

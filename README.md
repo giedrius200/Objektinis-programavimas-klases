@@ -1,10 +1,16 @@
 # Objektinis-programavavimas-2
-V1.1:
+V1.2:
 
-Pakeitus i class. Laikas vector, list, deque:
+Rule of three:
+
+1.copy constructor
 
 ![image](/assets/image1.png)
 
-Naudojant structuras:
+2.copy assignment operator
 
 ![image](/assets/image6.png)
+
+3.destructor
+
+![image](/assets/image4.png)

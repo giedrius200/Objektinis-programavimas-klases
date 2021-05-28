@@ -102,7 +102,7 @@ void rusiavimas(string filename, int o) {
         }
        
     }
-    grupe.push_back(Studentas1());
+    //grupe.push_back(Studentas1());
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
     cout << "Skirste i grupes: " << o << " : "
@@ -151,7 +151,7 @@ void rusiavimasl(string filename, int o) {
         }
     }
 
-    grupe.push_back(Studentas1());
+    //grupe.push_back(Studentas1());
 
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
@@ -201,7 +201,7 @@ void rusiavimasr(string filename, int o) {
         }
     }
 
-    grupe.push_back(Studentas1());
+    //grupe.push_back(Studentas1());
 
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);

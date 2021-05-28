@@ -27,7 +27,7 @@ Desktruktorius
 
 ![image](/assets/image2.png)
 
-## - [v1.3](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v1.3)
+## - [v1.5](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v1.5)
 
 ![image](/assets/image16.png)
 

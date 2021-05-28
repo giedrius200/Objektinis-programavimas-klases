@@ -1,14 +1,13 @@
 #include "lib.h"
-
 #include <sstream>
 
-
 int main() {
-    Studentas1* grupe;
+    //Studentas1* grupe;
+    DerivedStudentas* grupe;
     long int n = 0;
-
+    grupe = new DerivedStudentas[n];
     int u = 0;
-    grupe = new Studentas1[n];
+    //grupe = new Studentas1[n];
     int o = 1000;
     double vector = 0;
     double list = 0;
@@ -73,7 +72,7 @@ int main() {
             failas.close();
             failas.open("studentai.txt");
             cout << n << endl;
-            grupe = new Studentas1[n];
+            grupe = new DerivedStudentas[n];
             string dummyLine;
             getline(failas, dummyLine);
             if (failas.fail()) // checks to see if file opended
@@ -86,7 +85,7 @@ int main() {
             double number = 0;
 
             for (int ii = 0; ii < n; ii++) {
-                failas >> grupe[ii].vardas >> grupe[ii].pavarde;
+                failas >> grupe[ii].vardas_ >> grupe[ii].pavarde_;
                 grupe[ii].gal = 0;
                 getline(failas, line);
                 std::stringstream iss(line);
@@ -128,7 +127,7 @@ int main() {
         double num;
         char ivesti;
         char jau;
-        grupe = new Studentas1[n];
+        grupe = new DerivedStudentas[n];
         std::random_device rd;
         std::mt19937 gen(rd());
         std::uniform_int_distribution<> distr(1, 10);
@@ -137,8 +136,8 @@ int main() {
         {
 
             cout << "Iveskite studento varda ir pavarde" << endl;
-            cin >> grupe[i].vardas;
-            cin >> grupe[i].pavarde;
+            cin >> grupe[i].vardas_;
+            cin >> grupe[i].pavarde_;
             cout << "Ar namu darbai bus random (t,n)?" << endl;
             cin >> ivesti;
             cout << "Iveskite jo namu darbu pazymius" << endl;

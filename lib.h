@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <vector>
+#include "vektorius.h"
+//#include <vector>
 #include <algorithm>
 #include <random>
 #include <fstream>
@@ -47,9 +48,8 @@ struct Studentas {
     double egz, gal, mediana;
 };
 class Studentas6 {
-    // realizacija
 public:
-    char* vardas, *pavarde;
+    char* vardas, * pavarde;
     vector<double> paz;
     double paz1[500];
     double egz, gal, mediana;
@@ -83,35 +83,31 @@ public:
         delete[]& paz;
     }
 };
-class Studentas1 {
-    // realizacija
-public:
-    string vardas, pavarde;
-    vector<double> paz;
-    double paz1[500];
-    double egz, gal, mediana;
-    
-};
+//class Studentas1 {
+//    // realizacija
+//public:
+//    string vardas, pavarde;
+//    vector<double> paz;
+//    double paz1[500];
+//    double egz, gal, mediana;
+//    
+//};
 class Zmogus {
-    string vardas, pavarde;
-    vector<double> paz;
-    double paz1[500];
+protected:
+    string vardas;
+    string pavarde;
 };
-class DerivedStudentas : public Zmogus {
-    double egz, gal, mediana;
-    string vardas, pavarde;
-    public:
-        void inic(string v, string p)
-        {
-            vardas = v;
-            pavarde = p;
-            cout << "Inicialai" << vardas << " " << pavarde;
-        }
-
-
+class DerivedStudentas : private Zmogus {
+public:
+    double egz;
+    double mediana;
+    double gal;
+    string vardas_ = vardas;
+    string pavarde_ = pavarde;
+    vector <double>paz;
 };
 double mediana(vector<double>);
-void isvedimas(Studentas1 *grupe, int,char);
+void isvedimas(DerivedStudentas *grupe, int,char);
 void sukurimas();
 void rusiavimas(string, int);
 void rusiavimasl(string, int);

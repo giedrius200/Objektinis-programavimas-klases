@@ -74,8 +74,8 @@ void rusiavimas(string filename, int o) {
     
     string line;
 
-    std::vector<Studentas1> grupe(n);
-    std::vector<Studentas1> vargsiukai(n);
+    std::vector<DerivedStudentas> grupe(n);
+    std::vector<DerivedStudentas> vargsiukai(n);
 
     auto const predicate = [](double const value) { return value < 5; };
     string dummyLine;
@@ -83,26 +83,26 @@ void rusiavimas(string filename, int o) {
     auto t1 = high_resolution_clock::now();
 
     for (long int u = 0; u < n; u++) {
-        out >> grupe[u].vardas >> grupe[u].pavarde >> number;
+        out >> grupe[u].vardas_ >> grupe[u].pavarde_ >> number;
         grupe[u].paz.push_back(number);
         //cout << number << endl;
         //std::remove_copy_if(grupe[u].paz.begin(), grupe[u].paz.end(), back_inserter(vargsiukai[u].paz), maziau);
 
         //std::vector<double> vargsiukai[u].paz(grupe[u].paz.size());
         if (number < 5) {
-            std::copy(grupe[u].vardas.begin(), grupe[u].vardas.end(), std::back_inserter(vargsiukai[u].vardas));
-            std::copy(grupe[u].pavarde.begin(), grupe[u].pavarde.end(), std::back_inserter(vargsiukai[u].pavarde));
+            std::copy(grupe[u].vardas_.begin(), grupe[u].vardas_.end(), std::back_inserter(vargsiukai[u].vardas_));
+            std::copy(grupe[u].pavarde_.begin(), grupe[u].pavarde_.end(), std::back_inserter(vargsiukai[u].pavarde_));
             std::copy(grupe[u].paz.begin(), grupe[u].paz.end(), std::back_inserter(vargsiukai[u].paz));
-            out1 << vargsiukai[u].vardas << "    " << vargsiukai[u].pavarde << "      " << vargsiukai[u].paz[0] << endl;
+            out1 << vargsiukai[u].vardas_ << "    " << vargsiukai[u].pavarde_ << "      " << vargsiukai[u].paz[0] << endl;
         }
         else {
-            std::copy(grupe[u].vardas.begin(), grupe[u].vardas.end(), std::back_inserter(vargsiukai[u].vardas));
-            std::copy(grupe[u].pavarde.begin(), grupe[u].pavarde.end(), std::back_inserter(vargsiukai[u].pavarde));
-            out2 << vargsiukai[u].vardas << "    " << vargsiukai[u].pavarde << "      " << grupe[u].paz[0] << endl;
+            std::copy(grupe[u].vardas_.begin(), grupe[u].vardas_.end(), std::back_inserter(vargsiukai[u].vardas_));
+            std::copy(grupe[u].pavarde_.begin(), grupe[u].pavarde_.end(), std::back_inserter(vargsiukai[u].pavarde_));
+            out2 << vargsiukai[u].vardas_ << "    " << vargsiukai[u].pavarde_ << "      " << grupe[u].paz[0] << endl;
         }
        
     }
-    //grupe.push_back(Studentas1());
+    //grupe.push_back(DerivedStudentas());
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
     cout << "Skirste i grupes: " << o << " : "
@@ -134,24 +134,24 @@ void rusiavimasl(string filename, int o) {
 
     string line;
 
-    std::list<Studentas1> grupe(n);
+    std::list<DerivedStudentas> grupe(n);
     string dummyLine;
     getline(out, dummyLine);
     auto t1 = high_resolution_clock::now();
-    std::list<Studentas1>::iterator it;
+    std::list<DerivedStudentas>::iterator it;
     for (it = grupe.begin(); it != grupe.end(); it++) {
-        out >> (it)->vardas >> (it)->pavarde >> number;
+        out >> (it)->vardas_ >> (it)->pavarde_ >> number;
         (it)->paz.push_back(number);
         //cout << number << endl;
         if (number < 5) {
-            out1 << (it)->vardas << "    " << (it)->pavarde << "      " << (it)->paz[0] << endl;
+            out1 << (it)->vardas_ << "    " << (it)->pavarde_ << "      " << (it)->paz[0] << endl;
         }
         else {
-            out2 << (it)->vardas << "    " << (it)->pavarde << "      " << (it)->paz[0] << endl;
+            out2 << (it)->vardas_ << "    " << (it)->pavarde_ << "      " << (it)->paz[0] << endl;
         }
     }
 
-    //grupe.push_back(Studentas1());
+    //grupe.push_back(DerivedStudentas());
 
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
@@ -184,24 +184,24 @@ void rusiavimasr(string filename, int o) {
 
     string line;
 
-    std::deque<Studentas1> grupe(n);
+    std::deque<DerivedStudentas> grupe(n);
     string dummyLine;
     getline(out, dummyLine);
     auto t1 = high_resolution_clock::now();
-    std::deque<Studentas1>::iterator it;
+    std::deque<DerivedStudentas>::iterator it;
     for (it = grupe.begin(); it != grupe.end(); it++) {
-        out >> (it)->vardas >> (it)->pavarde >> number;
+        out >> (it)->vardas_ >> (it)->pavarde_ >> number;
         (it)->paz.push_back(number);
         //cout << number << endl;
         if (number < 5) {
-            out1 << (it)->vardas << "    " << (it)->pavarde << "      " << (it)->paz[0] << endl;
+            out1 << (it)->vardas_ << "    " << (it)->pavarde_ << "      " << (it)->paz[0] << endl;
         }
         else {
-            out2 << (it)->vardas << "    " << (it)->pavarde << "      " << (it)->paz[0] << endl;
+            out2 << (it)->vardas_ << "    " << (it)->pavarde_ << "      " << (it)->paz[0] << endl;
         }
     }
 
-    //grupe.push_back(Studentas1());
+    //grupe.push_back(DerivedStudentas());
 
     auto t2 = high_resolution_clock::now();
     auto duration = std::chrono::duration_cast<milliseconds>(t2 - t1);
@@ -211,7 +211,7 @@ void rusiavimasr(string filename, int o) {
 
 
 }
-void isvedimas(Studentas1 *grupe, int n, char failas1)
+void isvedimas(DerivedStudentas *grupe, int n, char failas1)
 {
     if (failas1 == 't') {
 
@@ -236,8 +236,8 @@ void isvedimas(Studentas1 *grupe, int n, char failas1)
             else {
                 failas << "-------------------------------------------------\n";
             }
-            failas << std::left << std::setw(20) << std::setfill(' ') << grupe[i].vardas;
-            failas << std::left << std::setw(20) << std::setfill(' ') << grupe[i].pavarde;
+            failas << std::left << std::setw(20) << std::setfill(' ') << grupe[i].vardas_;
+            failas << std::left << std::setw(20) << std::setfill(' ') << grupe[i].pavarde_;
             failas << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].gal;
             if (isvesti == 't') {
                 failas << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].mediana << std::endl;
@@ -272,8 +272,8 @@ void isvedimas(Studentas1 *grupe, int n, char failas1)
             else {
                 cout << "-------------------------------------------------\n";
             }
-            cout << std::left << std::setw(20) << std::setfill(' ') << grupe[i].vardas;
-            cout << std::left << std::setw(20) << std::setfill(' ') << grupe[i].pavarde;
+            cout << std::left << std::setw(20) << std::setfill(' ') << grupe[i].vardas_;
+            cout << std::left << std::setw(20) << std::setfill(' ') << grupe[i].pavarde_;
             cout << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].gal;
             if (isvesti == 't') {
                 cout << std::left << std::setw(20) << std::setfill(' ') << std::setprecision(3) << grupe[i].mediana << std::endl;

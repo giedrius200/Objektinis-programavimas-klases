@@ -4,7 +4,7 @@ Praeitos versijos:
 
 ![image](/assets/your-image18.jpg)
 
-## - V1.1
+## - [v1.1](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v1.1)
 Klase:
 
 ![image](/assets/image1.png)
@@ -14,7 +14,7 @@ Struktura:
 ![image](/assets/image3.png)
 
 
-## - V1.2
+## - [v1.2](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v1.2)
 Konstruktorius
 
 ![image](/assets/image.png)
@@ -27,7 +27,7 @@ Desktruktorius
 
 ![image](/assets/image2.png)
 
-## - V1.5
+## - [v1.3](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v1.3)
 
 ![image](/assets/image16.png)
 

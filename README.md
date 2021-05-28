@@ -1,7 +1,7 @@
 # Objektinis-programavavimas-2
-V1.0:
+## V1.0:
 
-V0.1: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą. 
+## V0.1: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą. 
 
 Suskaičiuoja galutinį balą ir pateikia į ekraną
 
@@ -10,18 +10,18 @@ Mokinio gautieji balai už namų darbus bei egzaminą generuojami atsitiktina
 
 
 
-V0.2: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą iš failo 
+## V0.2: Nuskaito vardą, pavardę, namų darbus ir egzamino rezultatą iš failo 
 
-V0.3: Header failas
+## V0.3: Header failas
 
-V0.4: Failu generavimas
+## V0.4: Failu generavimas
 Failu rusiavimas ir sukurimas dvieju failu
 
 
-V0.5: Laikas per kiek su vector, list, deque ivygdyta
+## V0.5: Laikas per kiek su vector, list, deque ivygdyta
 
 
-v1.0
+## v1.0
 1lib.cpp failas padarytas pagal:
 
 

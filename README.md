@@ -1,4 +1,6 @@
 # Objektinis-programavavimas-2
-Vektor
+Su mano:
 
+
+Su std vektor:
 

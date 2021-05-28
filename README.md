@@ -20,7 +20,7 @@ Failu rusiavimas ir sukurimas dvieju failu
 
 ## [v0.5](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v0.5): Laikas per kiek su vector, list, deque ivygdyta
 
-**## [v2.0](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v0.5): Paspausdami galite pereiti į v2.0 puslapį**
+** ## [v2.0](https://github.com/giedrius200/Objektinis-programavimas-klases/tree/v0.5): Paspausdami galite pereiti į v2.0 puslapį **
 
 ## v1.0
 1lib.cpp failas padarytas pagal:

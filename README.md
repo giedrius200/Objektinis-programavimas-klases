@@ -41,7 +41,7 @@ Pridėtas įdiegimo failas
 
 Įdiegimas
 
-![image](/assets/your-image6 .jpg)
+![image](/assets/your-image60.jpg)
 
 Toliau
 

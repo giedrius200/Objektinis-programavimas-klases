@@ -1,8 +1,8 @@
 # Objektinis-programavavimas-2
 Su mano:
 
-![image](/assets/your-image6.jpg)
+![image](/assets/image6.png)
 
 Su std vektor:
 
-![image](/assets/your-image8.jpg)
+![image](/assets/image8.png)

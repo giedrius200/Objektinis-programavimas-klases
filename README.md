@@ -1,5 +1,20 @@
 # Objektinis-programavavimas-2
 V1.5: Sukuriama bazine klase ir derived klase
 
-![image](/assets/your-image6.jpg)
+```
+class Zmogus {
+protected:
+    string vardas;
+    string pavarde;
+};
+class DerivedStudentas : private Zmogus {
+public:
+    double egz;
+    double mediana;
+    double gal;
+    string vardas_ = vardas;
+    string pavarde_ = pavarde;
+    vector <double>paz;
+};
+```
 

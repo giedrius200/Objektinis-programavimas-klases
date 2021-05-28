@@ -1,5 +1,4 @@
 # Objektinis-programavavimas-2
-V1.5: Sukuriama bazine klase ir derived klase
+Vektor
 
-![image](/assets/your-image6.jpg)
 

@@ -5,7 +5,8 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
-#include <vector>
+#include "vektorius.h"
+//#include <vector>
 #include <algorithm>
 #include <random>
 #include <fstream>
@@ -23,6 +24,7 @@
 #include <deque>
 #include <list>
 
+#include <cstdio>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -45,11 +47,11 @@ struct Studentas {
     vector<double> paz;
     double paz1[500];
     double egz, gal, mediana;
+
 };
 class Studentas6 {
-    // realizacija
 public:
-    char* vardas, *pavarde;
+    char* vardas, * pavarde;
     vector<double> paz;
     double paz1[500];
     double egz, gal, mediana;
@@ -90,31 +92,32 @@ public:
     vector<double> paz;
     double paz1[500];
     double egz, gal, mediana;
-    
 };
 class Zmogus {
-    string vardas, pavarde;
-    vector<double> paz;
-    double paz1[500];
+protected:
+    string vardas_;
+    string pavarde_;
 };
 class DerivedStudentas : public Zmogus {
-    double egz, gal, mediana;
-    string vardas, pavarde;
-    public:
-        void inic(string v, string p)
-        {
-            vardas = v;
-            pavarde = p;
-            cout << "Inicialai" << vardas << " " << pavarde;
-        }
-
-
+public:
+    double egz;
+    double mediana;
+    double gal;
+    string vardas;
+    string pavarde;
+    string getvardas() {
+        return vardas_;
+    }
+    string getpavarde() {
+        return pavarde_;
+    }
+    vector <double>paz;
 };
 double mediana(vector<double>);
-void isvedimas(Studentas1 *grupe, int,char);
-void sukurimas();
-void rusiavimas(string, int);
-void rusiavimasl(string, int);
-void rusiavimasr(string, int);
+void isvedimas(DerivedStudentas *grupe, int,char);
+void sukurimas(int&,vector<string>&);
+void rusiavimas(string);
+void rusiavimasl(string);
+void rusiavimasr(string);
 
 #endif 

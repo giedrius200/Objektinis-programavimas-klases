@@ -95,22 +95,22 @@ public:
 };
 class Zmogus {
 protected:
-    string vardas_;
-    string pavarde_;
+    string vardas;
+    string pavarde;
 };
 class DerivedStudentas : public Zmogus {
 public:
     double egz;
     double mediana;
     double gal;
-    string vardas;
-    string pavarde;
-    string getvardas() {
+    using Zmogus::vardas;
+    using Zmogus::pavarde;
+    /*string getvardas() {
         return vardas_;
     }
     string getpavarde() {
         return pavarde_;
-    }
+    }*/
     vector <double>paz;
 };
 double mediana(vector<double>);

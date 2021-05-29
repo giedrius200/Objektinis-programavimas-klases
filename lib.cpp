@@ -88,8 +88,6 @@ void rusiavimas(string filename) {
     string dummyLine;
     getline(out, dummyLine);
     int it = 0;
-    temp.vardas = temp.getvardas();
-    temp.pavarde = temp.getpavarde();
     auto t1 = high_resolution_clock::now();
     while (out >> temp.vardas >> temp.pavarde >> number) {
         temp.paz.push_back(number);
@@ -143,8 +141,6 @@ void rusiavimasl(string filename) {
     string dummyLine;
     getline(out, dummyLine);
     int it = 0;
-    temp.vardas = temp.getvardas();
-    temp.pavarde = temp.getpavarde();
     auto t1 = high_resolution_clock::now();
     while (out >> temp.vardas >> temp.pavarde >> number) {
         temp.paz.push_back(number);
@@ -198,8 +194,6 @@ void rusiavimasr(string filename) {
     string dummyLine;
     getline(out, dummyLine);
     int it = 0;
-    temp.vardas = temp.getvardas();
-    temp.pavarde = temp.getpavarde();
     auto t1 = high_resolution_clock::now();
     while (out >> temp.vardas >> temp.pavarde >> number) {
         temp.paz.push_back(number);

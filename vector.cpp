@@ -17,12 +17,18 @@ int main() {
     string filename;
     for(int i = 0; i < kiek; i++) {
         cout << "Iveskite failo" << i+1 << " pavadinima is siu failu: " << endl;
+        cout << "----------------"<< endl;
         for (int h = 0; h < kiek; h++) {
             cout << failas[h] << endl;
         }
+        cout << "----------------" << endl;
         cin >> filename;
+        for (int h = 0; h < kiek; h++) {
+            if (failas[h] == filename) {
+                failas[h].erase();
+            }
+        }
         filename = filename + ".txt";
-
         auto t1 = high_resolution_clock::now();
         rusiavimas(filename);
         auto t2 = high_resolution_clock::now();
@@ -52,7 +58,6 @@ int main() {
         vector = duration.count() + vector;
         list = duration1.count() + list;
         deque = duration6.count() + deque;
-
     }
     cout << endl;
     cout << "Bendras vector " << vector << " milliseconds" << endl;

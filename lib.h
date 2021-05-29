@@ -24,6 +24,7 @@
 #include <deque>
 #include <list>
 
+#include <cstdio>
 using std::cin;
 using std::cout;
 using std::endl;
@@ -46,6 +47,7 @@ struct Studentas {
     vector<double> paz;
     double paz1[500];
     double egz, gal, mediana;
+
 };
 class Studentas6 {
 public:
@@ -83,34 +85,39 @@ public:
         delete[]& paz;
     }
 };
-//class Studentas1 {
-//    // realizacija
-//public:
-//    string vardas, pavarde;
-//    vector<double> paz;
-//    double paz1[500];
-//    double egz, gal, mediana;
-//    
-//};
+class Studentas1 {
+    // realizacija
+public:
+    string vardas, pavarde;
+    vector<double> paz;
+    double paz1[500];
+    double egz, gal, mediana;
+};
 class Zmogus {
 protected:
-    string vardas;
-    string pavarde;
+    string vardas_;
+    string pavarde_;
 };
-class DerivedStudentas : private Zmogus {
+class DerivedStudentas : public Zmogus {
 public:
     double egz;
     double mediana;
     double gal;
-    string vardas_ = vardas;
-    string pavarde_ = pavarde;
+    string vardas;
+    string pavarde;
+    string getvardas() {
+        return vardas_;
+    }
+    string getpavarde() {
+        return pavarde_;
+    }
     vector <double>paz;
 };
 double mediana(vector<double>);
 void isvedimas(DerivedStudentas *grupe, int,char);
-void sukurimas();
-void rusiavimas(string, int);
-void rusiavimasl(string, int);
-void rusiavimasr(string, int);
+void sukurimas(int&,vector<string>&);
+void rusiavimas(string);
+void rusiavimasl(string);
+void rusiavimasr(string);
 
 #endif 
